@@ -98,6 +98,12 @@
           </goals>
         </execution>
       </executions>
+	  <configuration>
+  <excludes>
+    <exclude>**/BackendApplication.class</exclude>
+  </excludes>
+</configuration>
+
     </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
