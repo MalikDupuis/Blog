@@ -4,7 +4,7 @@
   "containerDefinitions": [
     {
       "name": "blog-backend",
-      "image": "494286470554.dkr.ecr.eu-west-3.amazonaws.com/blog-backend:latest",
+      "image": "malikmalikmalik/blog-backend:latest",
       "cpu": 256,
       "memory": 512,
       "essential": true,
