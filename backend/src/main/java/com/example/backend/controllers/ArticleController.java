@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import com.example.backend.models.Article;
 import com.example.backend.repositories.ArticleRepository;
+import com.example.backend.services.ArticleService;
 
 import java.util.List;
 
@@ -14,15 +15,15 @@ import java.util.List;
 public class ArticleController {
 
     @Autowired
-    private ArticleRepository articleRepository;
+    private ArticleService articleService;
 
     @GetMapping
     public List<Article> getAllArticles() {
-        return articleRepository.findAll();
+        return articleService.findAll();
     }
 
     @PostMapping
     public Article createArticle(@RequestBody Article article) {
-        return articleRepository.save(article);
+        return articleService.save(article);
     }
 }
