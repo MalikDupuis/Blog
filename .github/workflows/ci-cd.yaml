@@ -80,7 +80,12 @@ jobs:
         run: mvn -B clean verify
 
       - name: Security audit (Maven)
-        run: mvn org.owasp:dependency-check-maven:check -DfailBuildOnCVSS=7 || true
+        env:
+          NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+        run: mvn org.owasp:dependency-check-maven:check \
+          -Dnvd.apiKey=${{ secrets.NVD_API_KEY }} \
+          -DfailBuildOnCVSS=7 || true
+
 
       - name: Upload JaCoCo coverage report
         uses: actions/upload-artifact@v4
