@@ -1,0 +1,19 @@
+{
+  "family": "blog-frontend-task",
+  "networkMode": "bridge",
+  "containerDefinitions": [
+    {
+      "name": "blog-frontend",
+      "image": "494286470554.dkr.ecr.eu-west-3.amazonaws.com/blog-frontend:latest",
+      "cpu": 256,
+      "memory": 512,
+      "essential": true,
+      "portMappings": [
+        { "containerPort": 80, "hostPort": 80 }
+      ]
+    }
+  ],
+  "requiresCompatibilities": ["EC2"],
+  "cpu": "256",
+  "memory": "512"
+}
