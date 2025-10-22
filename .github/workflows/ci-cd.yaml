@@ -208,8 +208,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: blog-backend
-          environment_name: BlogBackend-env
+          application_name: blog
+          environment_name: Blog-env
           region: eu-west-3
           version_label: v-${{ github.run_number }}
           deployment_package: Dockerrun.aws.json
