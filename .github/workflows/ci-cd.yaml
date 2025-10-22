@@ -48,8 +48,8 @@ jobs:
         with:
           projectBaseDir: frontend
           args: >
-            -Dsonar.organization=malik
-            -Dsonar.projectKey=malik_blog_frontend
+            -Dsonar.organization=malikdupuis
+            -Dsonar.projectKey=mBlog
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.sources=src
             -Dsonar.tests=src
@@ -100,8 +100,8 @@ jobs:
         with:
           projectBaseDir: backend
           args: >
-            -Dsonar.organization=malik
-            -Dsonar.projectKey=malik_blog_backend
+            -Dsonar.organization=malikdupuis
+            -Dsonar.projectKey=Blog
             -Dsonar.java.binaries=target/classes
             -Dsonar.sources=src/main/java
             -Dsonar.tests=src/test/java
