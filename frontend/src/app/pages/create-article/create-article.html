@@ -1,0 +1,45 @@
+<div class="create-article-container">
+  <h2>📝 Créer un nouvel article</h2>
+
+  <form (ngSubmit)="onSubmit()" #articleForm="ngForm">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="article.title"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="content">Contenu</label>
+      <textarea
+        id="content"
+        name="content"
+        [(ngModel)]="article.content"
+        rows="6"
+        required
+      ></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="author">Auteur</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        [(ngModel)]="article.author"
+        required
+      />
+    </div>
+
+    <button type="submit" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Envoi en cours...' : 'Créer l’article' }}
+    </button>
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>

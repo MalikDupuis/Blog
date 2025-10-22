@@ -1,0 +1,22 @@
+<div class="articles-container">
+  <h2>📰 Liste des articles</h2>
+  <a routerLink="/create">✍️ Créer un article</a>
+
+  <div *ngIf="isLoading" class="loading">Chargement...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div *ngIf="!isLoading && articles.length > 0">
+    <div class="article-card" *ngFor="let article of articles">
+      <h3>{{ article.title }}</h3>
+      <p class="meta">
+        ✍️ {{ article.author }} - {{ article.createdAt | date: 'short' }}
+      </p>
+      <p>{{ article.content }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && articles.length === 0" class="no-articles">
+    Aucun article disponible 💤
+  </div>
+</div>
+
