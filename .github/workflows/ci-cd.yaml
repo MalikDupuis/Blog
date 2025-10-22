@@ -160,7 +160,7 @@ jobs:
       - name: Update ECS Backend Service
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: backend-task-definition.json
+          task-definition: backend/backend-task-definition.json
           service: blog-backend-service
           cluster: blog-cluster
           wait-for-service-stability: true
@@ -168,7 +168,7 @@ jobs:
       - name: Update ECS Frontend Service
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
-          task-definition: frontend-task-definition.json
+          task-definition: frontend/frontend-task-definition.json
           service: blog-frontend-service
           cluster: blog-cluster
           wait-for-service-stability: true
